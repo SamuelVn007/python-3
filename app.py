@@ -1,19 +1,42 @@
-print ("""
-█░░ █▀█ ░░█ ▄▀█ █▀   █▀█ █░█ ▄▀█ █▀█ ▄▀█
-█▄▄ █▄█ █▄█ █▀█ ▄█   █▄█ █▀█ █▀█ █▀▄ █▀█""")
+import os
+main():
+       mostrar_opcoes()
 
-print('1. cadastra site')
-print('2. listar site')
-print('3. ativar site')
-print('4. sair')
+def mostrar_opcoes():
+        print("""
+    █░░ █▀█ ░░█ ▄▀█ █▀   █▀█ █░█ ▄▀█ █▀█ ▄▀█
+    █▄▄ █▄█ █▄█ █▀█ ▄█   █▄█ █▀█ █▀█ █▀▄ █▀█""")
 
-opcao_escolhida = int(input('escolha uma opção'))
+
+    print('1. Cadastra cliente')
+    print('2. Listar cliente')
+    print('3. Ativar cliente')
+    print('4. Sair\n')
+
+    opcao_escolhida = int(input('escolha uma opção'))
+
+def cadastrar_cliente():
+    print("Você escolheu a opção cadastrar cliente")
+def listar_cliente():
+    print ("Você escolheu a opção listar cliente")
+def ativar_cliente():
+    print ("Você escolheu a opção ativar cliente")
+
+def finaliza_programa():
+    os.system('cls')
+    print("Finalizando programa\n")
+
 
 if opcao_escolhida == 1:
-    print('Você escolheu a opção cadastrar site')
+    cadastrar_cliente
 elif opcao_escolhida== 2:
-    print('Você escolheu a opção listar site ')   
+    listar_cliente  
 elif opcao_escolhida== 3:
-    print('Você escolheu a opção ativar site ')  
-elif opcao_escolhida== 4:
-    print('Você escolheu a opção sair ')  
+    ativar_cliente 
+else:
+   finaliza_programa
+
+   def main()
+    
+    if __name__ == "__name__":
+       main()
