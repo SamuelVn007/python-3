@@ -29,9 +29,11 @@ def escolher_opcao():
 
     def cadastra_cliente():
         exibir_subtitulo('Cadastrar Cliente')
-       
+
         Nome_Cliente = input("Digite seu Nome")
-        Clientes.append(Nome_Cliente)
+        instrumento_cliente = input(f'Qual instrumento musical o {Nome_Cliente} vai comprar: ')
+        dados_do_cliente = {'nome':Nome_Cliente, 'instrumento musical':instrumento_cliente, 'ativo':True}
+        Clientes.append(dados_do_cliente) 
         print(f'{Nome_Cliente} foi cadastrado com sucesso\n')
         retorna_menu()
 
