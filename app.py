@@ -19,7 +19,7 @@ def exibir_opcao():
 def escolher_opcao():
 
     def exibir_subtitulo(texto):
-        os.system('cls')
+        os.system('clear')
         print(texto)
         print('')
 
@@ -46,8 +46,22 @@ def escolher_opcao():
             print(f' - {nome_cliente} | {instrumento_cliente} | {ativo}')
         retorna_menu()
 
+    def ativar_cliente():
+        exibir_subtitulo('Ativar Cliente')
+        nome_cliente = input('Digite o nome o cliente que deseja ativar:')
+        cliente_encontrado = False
+
+        for Cliente in Clientes:
+            if nome_cliente: == Cliente['nome']
+                    cliente_encontrado = True
+                    Cliente['ativo'] = not Cliente ['cliente']
+                mensagem = f'{nome_cliente} foi ativado com sucesso' if Cliente['ativo'] else f'O cadastro {nome_cliente} não foi realizdo'
+            print(mensagem)
+        if not cliente_encontrado
+            print()
+
     def finalizar_app():
-        os.system('cls')
+        os.system('clear')
         print("Finalizando programa")
 
     def opcao_invalida():
@@ -73,7 +87,7 @@ def escolher_opcao():
         opcao_invalida()
 
 def main():
-    os.system('cls')
+    os.system('clear')
     exibir_titulo()
     exibir_opcao()
     escolher_opcao()
