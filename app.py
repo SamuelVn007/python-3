@@ -19,9 +19,12 @@ def exibir_opcao():
 def escolher_opcao():
 
     def exibir_subtitulo(texto):
-        os.system('clear')
+        os.system('cls')
+        linha = '-' * len(texto)
+        print(linha)
         print(texto)
-        print('')
+        print(linha)
+        print('') 
 
     def retorna_menu():
         input(' Digite uma tecla para voltar ao menu principal ')
@@ -42,8 +45,8 @@ def escolher_opcao():
         for Cliente in Clientes:
             nome_cliente = Cliente['nome']
             instrumento_cliente = Cliente ['instrumento musical']
-            ativo = Cliente['ativo']
-            print(f' - {nome_cliente} | {instrumento_cliente} | {ativo}')
+            ativo = 'Cadastrado' if Cliente['ativo'] else 'Não Cadastrado'
+            print(f' - {nome_cliente.ljust(20)} | {instrumento_cliente.ljust(20)} | {ativo.ljust(20)}')
         retorna_menu()
 
     def ativar_cliente():
@@ -52,20 +55,20 @@ def escolher_opcao():
         cliente_encontrado = False
 
         for Cliente in Clientes:
-            if nome_cliente: == Cliente['nome']
-                    cliente_encontrado = True
-                    Cliente['ativo'] = not Cliente ['cliente']
+            if nome_cliente == Cliente['nome']:
+                cliente_encontrado = True
+                Cliente['ativo'] = not Cliente ['cliente']
                 mensagem = f'{nome_cliente} foi ativado com sucesso' if Cliente['ativo'] else f'O cadastro {nome_cliente} não foi realizdo'
-            print(mensagem)
-        if not cliente_encontrado
-            print()
+                print(mensagem)
+        if not cliente_encontrado:
+            print('Não Encontrado')
 
     def finalizar_app():
-        os.system('clear')
+        os.system('cls')
         print("Finalizando programa")
 
     def opcao_invalida():
-        print("Opçao Invalida")
+        print("Opçao Inválida")
         input("Aperte um botão para retornar")
         main()
 
@@ -78,7 +81,7 @@ def escolher_opcao():
         elif opcao_escolhida == 2:
             listar_clientes()
         elif opcao_escolhida == 3:
-            print('Ativar Cliente')
+            ativar_cliente()
         elif opcao_escolhida == 4:
             finalizar_app()
         else:
@@ -87,7 +90,7 @@ def escolher_opcao():
         opcao_invalida()
 
 def main():
-    os.system('clear')
+    os.system('cls')
     exibir_titulo()
     exibir_opcao()
     escolher_opcao()
